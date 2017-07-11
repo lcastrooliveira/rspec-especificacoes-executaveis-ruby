@@ -7,7 +7,7 @@ describe Pokemon do
         2
       end
       subject do
-        Pokemon.new(nome:	'Charizard',	id_nacional:	6)
+        build_stubbed(:pokemon)
       end
       it	'exibe o nome e o id nacional'	do
     		expect(subject.nome_completo).to	eq('Charizard	-	6')

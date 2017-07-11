@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704002032) do
+ActiveRecord::Schema.define(version: 20170711024006) do
+
+  create_table "artigos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "conteudo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "aprovado"
+    t.integer "autor_id"
+    t.index ["autor_id"], name: "index_artigos_on_autor_id"
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "nome"
     t.integer "id_nacional"
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 
 end
