@@ -16,6 +16,7 @@ gem	'vcr'
 
 group :development, :test do
   gem	'factory_girl_rails'
+  gem'timecop'
   gem 'rails-controller-testing'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'

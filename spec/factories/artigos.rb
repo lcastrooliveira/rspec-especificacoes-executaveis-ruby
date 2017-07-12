@@ -6,7 +6,7 @@ FactoryGirl.define do
     titulo
     conteudo { "Conteudo do artigo #{titulo}. Approved: #{aprovado}" }
     created_at { 2.days.ago }
-    association :autor, factory: :usuario, nome: 'Mauro'
+    association :autor, factory: :usuario, nome: "Mauro"
 
     trait :aprovado do
       aprovado true
