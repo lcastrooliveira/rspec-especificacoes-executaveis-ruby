@@ -1,5 +1,6 @@
 class	Pokemon	<	ActiveRecord::Base
   
+  validates :nome, :id_nacional, presence: true
   scope :escolhidos_ontem, -> do
     where(escolhido_em: 1.day.ago.midnight..Time.zone.now.midnight)
   end
