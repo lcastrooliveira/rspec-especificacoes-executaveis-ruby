@@ -4,7 +4,7 @@ FactoryGirl.define do
     email { "#{nome}@gmail.com" }
 
     trait :com_artigo do
-      ignore do
+      transient do
         total_de_artigos 3
       end
 

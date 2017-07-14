@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :pokeapi, class: String do
     skip_create
-    ignore do
+    transient do
       id_nacional 6
       nome 'Charizard'
       ataque 84

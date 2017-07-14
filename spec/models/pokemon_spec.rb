@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Pokemon do
+
   describe '#nome_completo' do
     context 'quando possui os valores' do
       subject do
@@ -19,6 +20,7 @@ describe Pokemon do
       end
     end
   end
+
   describe '.escolhidos_ontem' do
 
     before do
@@ -44,6 +46,15 @@ describe Pokemon do
     it 'não tem pokemon escolhido antes de ontem' do
       pokemon_escolhido_antes_de_ontem = create(:pokemon, escolhido_em: Time.zone.local(2015,7,9))
       expect(subject).to_not include(pokemon_escolhido_antes_de_ontem)
+    end
+  end
+
+  describe '#ataque_critico' do
+    it 'é um valor aleatorio' do
+      allow(Random).to receive(:rand).with(60..80).and_return(75)
+
+      pokemon = Pokemon.new
+      expect(pokemon.ataque_critico).to eq(75)
     end
   end
 

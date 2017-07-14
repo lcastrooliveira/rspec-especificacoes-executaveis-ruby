@@ -11,4 +11,11 @@ class	Pokemon	<	ActiveRecord::Base
   def	nome_completo
     "#{nome}	-	#{id_nacional}" if nome && id_nacional
   end
+
+  def ataque_critico
+    Random.rand(60..80)
+  end
+
+  def to_presenter
+  end
 end
