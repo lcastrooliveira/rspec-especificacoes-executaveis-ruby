@@ -18,5 +18,6 @@ FactoryGirl.define do
   factory :pokemon do
     id_nacional 6
     nome 'Charizard'
+    ataque 84
   end
 end

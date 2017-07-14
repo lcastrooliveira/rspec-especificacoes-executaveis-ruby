@@ -46,4 +46,28 @@ describe Pokemon do
       expect(subject).to_not include(pokemon_escolhido_antes_de_ontem)
     end
   end
+
+  describe 'validacoes' do
+    context 'nome' do
+      it { should validate_presence_of(:nome) }
+    end
+    context 'id_nacional' do
+      it { should validate_presence_of(:id_nacional) }
+      it { should validate_numericality_of(:id_nacional).only_integer.is_greater_than(0) }
+    end
+    describe 'ataque' do
+      context 'quando esta aprovado' do
+        subject do
+          Pokemon.new(aprovado: true)
+        end
+        it { should validate_presence_of(:ataque) }
+      end
+      context 'quando nao esta aprovado' do
+        subject do
+          Pokemon.new
+        end
+        it { should_not validate_presence_of(:ataque) }
+      end
+    end
+  end
 end
