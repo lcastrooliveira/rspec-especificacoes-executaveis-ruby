@@ -5,7 +5,7 @@ class CriadorPokemon
   end
 
   def criar
-    Pokemon.create(nome: nome)
+    Pokemon.create(nome: nome, id_nacional: 6)
   end
 
   private
@@ -17,6 +17,7 @@ class CriadorPokemon
   end
 
   def cria_info
+    #binding.pry
     resposta = Net::HTTP.get(endpoint)
     @info = JSON.parse(resposta)
   end

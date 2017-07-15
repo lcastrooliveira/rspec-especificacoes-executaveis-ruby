@@ -15,6 +15,9 @@ gem	'webmock'
 gem	'vcr'
 
 group :development, :test do
+  gem 'pry-byebug'
+  gem	'awesome_print'
+  gem	'pry-rails'
   gem	'factory_girl_rails'
   gem'timecop'
   gem 'rails-controller-testing'
